@@ -1,0 +1,16 @@
+.product-media img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain; /* Ensures the image fits without stretching */
+    display: block;
+    margin: auto;
+}
+
+#product-zoom {
+    width: 400px;
+    height: 400px;
+    object-fit: contain; /* Ensures the image fits inside without cropping */
+    display: block;
+    margin: auto;
+    background-color: #f5f5f5; /* Optional: Add a background color */
+}

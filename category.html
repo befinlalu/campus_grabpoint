@@ -36,6 +36,7 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/skins/skin-demo-7.css">
 		<link rel="stylesheet" href="assets/css/demos/demo-7.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 	</head>
 
 	<body>
@@ -64,10 +65,15 @@
 								<li>
 									<a href="#">Links</a>
 									<ul>
-                                        <li><a href="wishlist.html"><i class="icon-heart-o"></i>Wishlist</a></li>
+                                        <li><a href="orders.html"><i class="icon-shopping-bag"></i> Orders</a></li>
 										<li><a href="about.html">About Us</a></li>
 										
-										<li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Sign In</a></li>
+										<li>
+    <a href="#" id="auth-link">
+        <i class="icon-user"></i><span id="auth-text">Sign In</span>
+    </a>
+</li>
+
 									</ul>
 								</li>
 							</ul>
@@ -115,70 +121,19 @@
 						<!-- End .header-left -->
 
 						<div class="header-right">
-
 							<div class="dropdown cart-dropdown">
 								<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
 									<i class="icon-shopping-cart"></i>
-									<span class="cart-count">2</span>
 								</a>
 
 								<div class="dropdown-menu dropdown-menu-right">
 									<div class="dropdown-cart-products">
-										<div class="product">
-											<div class="product-cart-details">
-												<h4 class="product-title">
-													<a href="product.html">Notebooks medium</a>
-												</h4>
-
-												<span class="cart-product-info">
-													<span class="cart-product-qty">1</span>
-													x $84.00
-												</span>
-											</div>
-											<!-- End .product-cart-details -->
-
-											<figure class="product-image-container">
-												<a href="product.html" class="product-image">
-													<img src="assets/images/products/cart/product-1.jpg" alt="product">
-												</a>
-											</figure>
-											<a href="#" class="btn-remove" title="Remove Product">
-												<i class="icon-close"></i>
-											</a>
-										</div>
-										<!-- End .product -->
-
-										<div class="product">
-											<div class="product-cart-details">
-												<h4 class="product-title">
-													<a href="product.html">Highlighters</a>
-												</h4>
-
-												<span class="cart-product-info">
-													<span class="cart-product-qty">1</span>
-													x $76.00
-												</span>
-											</div>
-											<!-- End .product-cart-details -->
-
-											<figure class="product-image-container">
-												<a href="product.html" class="product-image">
-													<img src="assets/images/products/cart/product-2.jpg" alt="product">
-												</a>
-											</figure>
-											<a href="#" class="btn-remove" title="Remove Product">
-												<i class="icon-close"></i>
-											</a>
-										</div>
-										<!-- End .product -->
+										
+										
 									</div>
 									<!-- End .cart-product -->
 
-									<div class="dropdown-cart-total">
-										<span>Total</span>
-
-										<span class="cart-total-price">$160.00</span>
-									</div>
+									
 									<!-- End .dropdown-cart-total -->
 
 									<div class="dropdown-cart-action">
@@ -214,143 +169,22 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-9">
-								<div class="products mb-3">
+								<div class="products-store mb-3">
 									<div class="row justify-content-center">
-
-										<div class="col-6 col-md-4 col-lg-4">
-											<div class="product product-7 text-center">
-												<figure class="product-media">
-													<span class="product-label label-out">Out of Stock</span>
-													<a href="product.html">
-														<img src="assets/images/book.jpg" alt="Product image" class="product-image">
-													</a>
-	
-													<div class="product-action-vertical">
-														<a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
-														<a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-														<a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-													</div><!-- End .product-action-vertical -->
-	
-													<div class="product-action">
-														<a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-													</div><!-- End .product-action -->
-												</figure><!-- End .product-media -->
-	
-												<div class="product-body">
-													<div class="product-cat">
-														<a href="#">Record</a>
-													</div><!-- End .product-cat -->
-													<h3 class="product-title"><a href="product.html">Lab Record</a></h3><!-- End .product-title -->
-													<div class="product-price">
-														<span class="out-price">$180.00</span>
-													</div><!-- End .product-price -->
-													<div class="ratings-container">
-														<div class="ratings">
-															<div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-														</div><!-- End .ratings -->
-														<span class="ratings-text">( 6 Reviews )</span>
-													</div><!-- End .rating-container -->
-												</div><!-- End .product-body -->
-											</div><!-- End .product -->
-										</div><!-- End .col-sm-6 col-lg-4 -->
-	
-										<div class="col-6 col-md-4 col-lg-4">
-											<div class="product product-7 text-center">
-												<figure class="product-media">
-													<a href="product.html">
-														<img src="assets/images/files.jpg" alt="Product image" class="product-image">
-													</a>
-	
-													<div class="product-action-vertical">
-														<a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
-													</div><!-- End .product-action-vertical -->
-	
-													<div class="product-action">
-														<a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-													</div><!-- End .product-action -->
-												</figure><!-- End .product-media -->
-	
-												<div class="product-body">
-													<div class="product-cat">
-														<a href="#">Files</a>
-													</div><!-- End .product-cat -->
-													<h3 class="product-title"><a href="product.html">Stick Files</a></h3><!-- End .product-title -->
-													<div class="product-price">
-														$20.00
-													</div><!-- End .product-price -->
-													<div class="ratings-container">
-														<div class="ratings">
-															<div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
-														</div><!-- End .ratings -->
-														<span class="ratings-text">( 2 Reviews )</span>
-													</div><!-- End .rating-container -->
-												</div><!-- End .product-body -->
-											</div><!-- End .product -->
-										</div><!-- End .col-sm-6 col-lg-4 -->
-
-                                        <div class="col-6 col-md-4 col-lg-4">
-											<div class="product product-7 text-center">
-												<figure class="product-media">
-													<a href="product.html">
-														<img src="assets/images/pens.jpg" alt="Product image" class="product-image">
-													</a>
-	
-													<div class="product-action-vertical">
-														<a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
-													</div><!-- End .product-action-vertical -->
-	
-													<div class="product-action">
-														<a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-													</div><!-- End .product-action -->
-												</figure><!-- End .product-media -->
-	
-												<div class="product-body">
-													<div class="product-cat">
-														<a href="#">Pen</a>
-													</div><!-- End .product-cat -->
-													<h3 class="product-title"><a href="product.html">Ball Pen</a></h3><!-- End .product-title -->
-													<div class="product-price">
-														$10.00
-													</div><!-- End .product-price -->
-													<div class="ratings-container">
-														<div class="ratings">
-															<div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
-														</div><!-- End .ratings -->
-														<span class="ratings-text">( 2 Reviews )</span>
-													</div><!-- End .rating-container -->
-												</div><!-- End .product-body -->
-											</div><!-- End .product -->
-										</div><!-- End .col-sm-6 col-lg-4 -->
-	
-										
+										<div class="more-container text-center mt-2">
+											<a href="#" class="btn btn-outline-dark-3 btn-more">
+												<span>Load more</span>
+												<i class="icon-long-arrow-right"></i>
+											</a>
+										</div>
 									</div><!-- End .row -->
 								</div><!-- End .products -->
-	
-								<nav aria-label="Page navigation">
-									<ul class="pagination justify-content-center">
-										<li class="page-item disabled">
-											<a class="page-link page-link-prev" href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
-												<span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>Prev
-											</a>
-										</li>
-										<li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item"><a class="page-link" href="#">3</a></li>
-										<li class="page-item-total">of 6</li>
-										<li class="page-item">
-											<a class="page-link page-link-next" href="#" aria-label="Next">
-												Next <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>
-											</a>
-										</li>
-									</ul>
-								</nav>
+
 							</div><!-- End .col-lg-9 -->
+
 							<aside class="col-lg-3 order-lg-first">
 								<div class="sidebar sidebar-shop">
-									<div class="widget widget-clean">
-										<label>Filters:</label>
-										<a href="#" class="sidebar-filter-clear">Clean All</a>
-									</div><!-- End .widget widget-clean -->
+									
 	
 									<div class="widget widget-collapsible">
 										<h3 class="widget-title">
@@ -361,134 +195,10 @@
 	
 										<div class="collapse show" id="widget-1">
                                             <div class="widget-body">
+
                                                 <div class="filter-items filter-items-count">
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-1">
-                                                            <label class="custom-control-label" for="cat-1">Pen</label>
-                                                        </div>
-                                                        <span class="item-count">3</span>
-                                                    </div>
+                                                    
                                         
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-2">
-                                                            <label class="custom-control-label" for="cat-2">Pencil</label>
-                                                        </div>
-                                                        <span class="item-count">0</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-3">
-                                                            <label class="custom-control-label" for="cat-3">Notebook</label>
-                                                        </div>
-                                                        <span class="item-count">4</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-4">
-                                                            <label class="custom-control-label" for="cat-4">Eraser</label>
-                                                        </div>
-                                                        <span class="item-count">2</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-5">
-                                                            <label class="custom-control-label" for="cat-5">Scale</label>
-                                                        </div>
-                                                        <span class="item-count">2</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-6">
-                                                            <label class="custom-control-label" for="cat-6">Whitener</label>
-                                                        </div>
-                                                        <span class="item-count">1</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-7">
-                                                            <label class="custom-control-label" for="cat-7">Sharpener</label>
-                                                        </div>
-                                                        <span class="item-count">1</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-8">
-                                                            <label class="custom-control-label" for="cat-8">Highlighter</label>
-                                                        </div>
-                                                        <span class="item-count">0</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-9">
-                                                            <label class="custom-control-label" for="cat-9">A4 papers</label>
-                                                        </div>
-                                                        <span class="item-count">3</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-10">
-                                                            <label class="custom-control-label" for="cat-10">Chart papers</label>
-                                                        </div>
-                                                        <span class="item-count">2</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-11">
-                                                            <label class="custom-control-label" for="cat-11">Scissors</label>
-                                                        </div>
-                                                        <span class="item-count">1</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-12">
-                                                            <label class="custom-control-label" for="cat-12">Stapler</label>
-                                                        </div>
-                                                        <span class="item-count">4</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-13">
-                                                            <label class="custom-control-label" for="cat-13">Glue</label>
-                                                        </div>
-                                                        <span class="item-count">3</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-14">
-                                                            <label class="custom-control-label" for="cat-14">Lab record</label>
-                                                        </div>
-                                                        <span class="item-count">2</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-15">
-                                                            <label class="custom-control-label" for="cat-15">File</label>
-                                                        </div>
-                                                        <span class="item-count">1</span>
-                                                    </div>
-                                        
-                                                    <div class="filter-item">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-16">
-                                                            <label class="custom-control-label" for="cat-16">Uniform material</label>
-                                                        </div>
-                                                        <span class="item-count">2</span>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -496,6 +206,7 @@
 									</div><!-- End .widget -->
 	
 								</div><!-- End .sidebar sidebar-shop -->
+
 							</aside><!-- End .col-lg-3 -->
 						</div><!-- End .row -->
 					</div><!-- End .container -->
@@ -806,7 +517,7 @@
 								</ul>
 								<div class="tab-content" id="tab-content-5">
 									<div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-										<form action="#">
+										<form id="login-form">
 											<div class="form-group">
 												<label for="singin-email">Register No *</label>
 												<input type="text" class="form-control" id="singin-email" name="singin-email" required>
@@ -831,50 +542,37 @@
 													<label class="custom-control-label" for="signin-remember">Remember Me</label>
 												</div> -->
 
-											<a href="#" class="forgot-link">Forgot Your Password?</a>
+											<a href="fogot_pass.html" class="forgot-link">Forgot Your Password?</a>
 											</div>
 											<!-- End .form-footer -->
 										</form>
 									</div>
 									<!-- .End .tab-pane -->
 									<div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-										<form action="#">
+										<form id="registration-form">
                                             <div class="form-group">
-												<input type="email" class="form-control" id="register-name" name="full-name" placeholder="Your full name *" required>
-											</div>
-											<!-- End .form-group -->
-
+                                                <input type="text" class="form-control" id="register-name" name="full-name" placeholder="Your full name *" required>
+                                            </div>
+                                        
                                             <div class="form-group">
-												<input type="email" class="form-control" id="register-no" name="register-no" placeholder="Your register no *" required>
-											</div>
-											<!-- End .form-group -->
-                                            
-											<div class="form-group">
-												<input type="email" class="form-control" id="register-email" name="register-email" placeholder="Your email address *" required>
-											</div>
-											<!-- End .form-group -->
-
-											<div class="form-group">
-												<input type="password" class="form-control" id="register-password" name="register-password" placeholder="Password *" required>
-											</div>
-											<!-- End .form-group -->
-
-											<div class="form-footer">
-												<button type="submit" class="btn btn-outline-primary-2">
-													<span>SIGN UP</span>
-													<i class="icon-long-arrow-right"></i>
-												</button>
-
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" id="register-policy" required>
-													<label class="custom-control-label" for="register-policy">I agree to the
-														<a href="#">privacy policy</a>
-														*</label>
-												</div>
-												<!-- End .custom-checkbox -->
-											</div>
-											<!-- End .form-footer -->
-										</form>
+                                                <input type="text" class="form-control" id="register-no" name="register-no" placeholder="Your register no *" required>
+                                            </div>
+                                        
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="register-email" name="register-email" placeholder="Your email address *" required>
+                                            </div>
+                                        
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" id="register-password" name="register-password" placeholder="Password *" required>
+                                            </div>
+                                        
+                                            <div class="form-footer">
+                                                <button type="submit" class="btn btn-outline-primary-2">
+                                                    <span>SIGN UP</span>
+                                                    <i class="icon-long-arrow-right"></i>
+                                                </button>
+                                            </div>
+                                        </form>
 										
 										<!-- End .form-choice -->
 									</div>
@@ -894,6 +592,7 @@
 		</div>
 		<!-- End .modal -->
 
+
 		
 		</div>
 		<!-- Plugins JS File -->
@@ -911,6 +610,9 @@
 		<!-- Main JS File -->
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/demos/demo-7.js"></script>
+		<script src="global.js"></script>
+		<script src="store.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	</body>
 
 

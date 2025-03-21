@@ -36,6 +36,7 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/skins/skin-demo-7.css">
 		<link rel="stylesheet" href="assets/css/demos/demo-7.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 	</head>
 
 	<body>
@@ -64,10 +65,15 @@
 								<li>
 									<a href="#">Links</a>
 									<ul>
-                                        <li><a href="wishlist.html"><i class="icon-heart-o"></i>Wishlist</a></li>
+                                        <li><a href="orders.html"><i class="icon-shopping-bag"></i> Orders</a></li>
 										<li><a href="about.html">About Us</a></li>
 										
-										<li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Sign In</a></li>
+										<li>
+    <a href="#" id="auth-link">
+        <i class="icon-user"></i><span id="auth-text">Sign In</span>
+    </a>
+</li>
+
 									</ul>
 								</li>
 							</ul>
@@ -134,7 +140,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-9">
-									<table class="table table-cart table-mobile">
+									<table class="table table-cart table-mobile cart-items">
 										<thead>
 											<tr>
 												<th>Product</th>
@@ -169,29 +175,6 @@
 												<td class="total-col">Rs 84.00</td>
 												<td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
 											</tr>
-											<tr>
-												<td class="product-col">
-													<div class="product">
-														<figure class="product-media">
-															<a href="#">
-																<img src="assets/images/products/table/product-2.jpg" alt="Product image">
-															</a>
-														</figure>
-	
-														<h3 class="product-title">
-															<a href="#">Apsara pencils</a>
-														</h3><!-- End .product-title -->
-													</div><!-- End .product -->
-												</td>
-												<td class="price-col">$76.00</td>
-												<td class="quantity-col">
-													<div class="cart-product-quantity">
-														<input type="number" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-													</div><!-- End .cart-product-quantity -->                                 
-												</td>
-												<td class="total-col">$76.00</td>
-												<td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
-											</tr>
 										</tbody>
 									</table><!-- End .table table-wishlist -->
 	
@@ -205,12 +188,12 @@
 											<tbody>
 												<tr class="summary-subtotal">
 													<td>Subtotal:</td>
-													<td>$160.00</td>
+													<td>Rs 160.00</td>
 												</tr><!-- End .summary-subtotal -->
 	
 												<tr class="summary-total">
 													<td>Total:</td>
-													<td>$160.00</td>
+													<td>Rs 160.00</td>
 												</tr><!-- End .summary-total -->
 											</tbody>
 										</table><!-- End .table table-summary -->
@@ -530,7 +513,7 @@
 								</ul>
 								<div class="tab-content" id="tab-content-5">
 									<div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-										<form action="#">
+										<form id="login-form">
 											<div class="form-group">
 												<label for="singin-email">Register No *</label>
 												<input type="text" class="form-control" id="singin-email" name="singin-email" required>
@@ -555,50 +538,37 @@
 													<label class="custom-control-label" for="signin-remember">Remember Me</label>
 												</div> -->
 
-											<a href="#" class="forgot-link">Forgot Your Password?</a>
+											<a href="fogot_pass.html" class="forgot-link">Forgot Your Password?</a>
 											</div>
 											<!-- End .form-footer -->
 										</form>
 									</div>
 									<!-- .End .tab-pane -->
 									<div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-										<form action="#">
+										<form id="registration-form">
                                             <div class="form-group">
-												<input type="email" class="form-control" id="register-name" name="full-name" placeholder="Your full name *" required>
-											</div>
-											<!-- End .form-group -->
-
+                                                <input type="text" class="form-control" id="register-name" name="full-name" placeholder="Your full name *" required>
+                                            </div>
+                                        
                                             <div class="form-group">
-												<input type="email" class="form-control" id="register-no" name="register-no" placeholder="Your register no *" required>
-											</div>
-											<!-- End .form-group -->
-                                            
-											<div class="form-group">
-												<input type="email" class="form-control" id="register-email" name="register-email" placeholder="Your email address *" required>
-											</div>
-											<!-- End .form-group -->
-
-											<div class="form-group">
-												<input type="password" class="form-control" id="register-password" name="register-password" placeholder="Password *" required>
-											</div>
-											<!-- End .form-group -->
-
-											<div class="form-footer">
-												<button type="submit" class="btn btn-outline-primary-2">
-													<span>SIGN UP</span>
-													<i class="icon-long-arrow-right"></i>
-												</button>
-
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" id="register-policy" required>
-													<label class="custom-control-label" for="register-policy">I agree to the
-														<a href="#">privacy policy</a>
-														*</label>
-												</div>
-												<!-- End .custom-checkbox -->
-											</div>
-											<!-- End .form-footer -->
-										</form>
+                                                <input type="text" class="form-control" id="register-no" name="register-no" placeholder="Your register no *" required>
+                                            </div>
+                                        
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="register-email" name="register-email" placeholder="Your email address *" required>
+                                            </div>
+                                        
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" id="register-password" name="register-password" placeholder="Password *" required>
+                                            </div>
+                                        
+                                            <div class="form-footer">
+                                                <button type="submit" class="btn btn-outline-primary-2">
+                                                    <span>SIGN UP</span>
+                                                    <i class="icon-long-arrow-right"></i>
+                                                </button>
+                                            </div>
+                                        </form>
 										
 										<!-- End .form-choice -->
 									</div>
@@ -634,9 +604,14 @@
 		<script src="assets/js/jquery.countdown.min.js"></script>
 		<!-- Main JS File -->
 		<script src="assets/js/main.js"></script>
+		<script src="cart.js"></script>
 		<script src="assets/js/demos/demo-7.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	</body>
 
 
 	<!-- molla/index-7.html  22 Nov 2019 09:56:58 GMT -->
 </html>
+
+
+

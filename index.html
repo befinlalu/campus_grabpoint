@@ -36,6 +36,8 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/skins/skin-demo-7.css">
 		<link rel="stylesheet" href="assets/css/demos/demo-7.css">
+		<link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 	</head>
 
 	<body>
@@ -64,10 +66,17 @@
 								<li>
 									<a href="#">Links</a>
 									<ul>
-                                        <li><a href="wishlist.html"><i class="icon-heart-o"></i>Wishlist</a></li>
+                                        <li><a href="orders.html"><i class="icon-shopping-bag"></i> Orders</a></li>
+										
+
 										<li><a href="about.html">About Us</a></li>
 										
-										<li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Sign In</a></li>
+										<li>
+                                            <a href="#" id="auth-link">
+                                                <i class="icon-user"></i><span id="auth-text">Sign In</span>
+                                            </a>
+                                        </li>
+
 									</ul>
 								</li>
 							</ul>
@@ -119,66 +128,16 @@
 							<div class="dropdown cart-dropdown">
 								<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
 									<i class="icon-shopping-cart"></i>
-									<span class="cart-count">2</span>
 								</a>
 
 								<div class="dropdown-menu dropdown-menu-right">
 									<div class="dropdown-cart-products">
-										<div class="product">
-											<div class="product-cart-details">
-												<h4 class="product-title">
-													<a href="product.html">Notebooks medium</a>
-												</h4>
-
-												<span class="cart-product-info">
-													<span class="cart-product-qty">1</span>
-													x $84.00
-												</span>
-											</div>
-											<!-- End .product-cart-details -->
-
-											<figure class="product-image-container">
-												<a href="product.html" class="product-image">
-													<img src="assets/images/products/cart/product-1.jpg" alt="product">
-												</a>
-											</figure>
-											<a href="#" class="btn-remove" title="Remove Product">
-												<i class="icon-close"></i>
-											</a>
-										</div>
-										<!-- End .product -->
-
-										<div class="product">
-											<div class="product-cart-details">
-												<h4 class="product-title">
-													<a href="product.html">Highlighters</a>
-												</h4>
-
-												<span class="cart-product-info">
-													<span class="cart-product-qty">1</span>
-													x $76.00
-												</span>
-											</div>
-											<!-- End .product-cart-details -->
-
-											<figure class="product-image-container">
-												<a href="product.html" class="product-image">
-													<img src="assets/images/products/cart/product-2.jpg" alt="product">
-												</a>
-											</figure>
-											<a href="#" class="btn-remove" title="Remove Product">
-												<i class="icon-close"></i>
-											</a>
-										</div>
-										<!-- End .product -->
+										
+										
 									</div>
 									<!-- End .cart-product -->
 
-									<div class="dropdown-cart-total">
-										<span>Total</span>
-
-										<span class="cart-total-price">$160.00</span>
-									</div>
+									
 									<!-- End .dropdown-cart-total -->
 
 									<div class="dropdown-cart-action">
@@ -311,17 +270,19 @@
                 <div class="container-fluid">
                     <div class="heading heading-center mb-3">
                     <h2 class="title mt-3">NEW ARRIVALS</h2>
-            
+                    <div class="p-3"></div>
                     <div class="tab-content">
                         <div class="tab-pane p-0 fade show active" id="new-women-tab" role="tabpanel" aria-labelledby="new-women-link">
                             <div class="products">
                                 <div class="row justify-content-center">
+                                    
+                                   
                                     <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
                                         <div class="product product-7 text-center">
                                             <figure class="product-media">
                                                 <a href="product.html">
                                                     <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
+                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image-hover">
                                                 </a>
             
                                                 <div class="product-action-vertical">
@@ -366,706 +327,9 @@
                                         <!-- End .product -->
                                     </div>
                                     <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
-                                        <div class="product product-7 text-center">
-                                            <figure class="product-media">
-                                                <a href="product.html">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-1.jpg" alt="Product image" class="product-image">
-                                                    <img src="assets/images/demos/demo-2/products/product-16-2.jpg" alt="Product image" class="product-image-hover">
-                                                </a>
-            
-                                                <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                                        <span>add to wishlist</span>
-                                                    </a>
-                                                    
-                                                </div>
-                                                <!-- End .product-action-vertical -->
-            
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart">
-                                                        <span>add to cart</span>
-                                                    </a>
-                                                </div>
-                                                <!-- End .product-action -->
-                                            </figure>
-                                            <!-- End .product-media -->
-            
-                                            <div class="product-body">
-                                                <h3 class="product-title">
-                                                    <a href="product.html">Tie-detail top</a>
-                                                </h3>
-                                                <!-- End .product-title -->
-                                                <div class="product-price">
-                                                    <span class="new-price">$50.00</span>
-                                                    <span class="old-price">$84.00</span>
-                                                </div>
-                                                <!-- End .product-price -->
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 70%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div>
-                                                    <!-- End .ratings -->
-                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                </div>
-                                                <!-- End .rating-container -->
-                                            </div>
-                                            <!-- End .product-body -->
-                                        </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    
+                                    
+                                    
                                 </div>
                                 <!-- End .row -->
                             </div>
@@ -1391,7 +655,7 @@
 								</ul>
 								<div class="tab-content" id="tab-content-5">
 									<div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-										<form action="#">
+										<form id="login-form">
 											<div class="form-group">
 												<label for="singin-email">Register No *</label>
 												<input type="text" class="form-control" id="singin-email" name="singin-email" required>
@@ -1416,50 +680,37 @@
 													<label class="custom-control-label" for="signin-remember">Remember Me</label>
 												</div> -->
 
-											<a href="#" class="forgot-link">Forgot Your Password?</a>
+											<a href="fogot_pass.html" class="forgot-link">Forgot Your Password?</a>
 											</div>
 											<!-- End .form-footer -->
 										</form>
 									</div>
 									<!-- .End .tab-pane -->
 									<div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-										<form action="#" >
+										<form id="registration-form">
                                             <div class="form-group">
-												<input type="email" class="form-control" id="register-name" name="full-name" placeholder="Your full name *" required>
-											</div>
-											<!-- End .form-group -->
-
+                                                <input type="text" class="form-control" id="register-name" name="full-name" placeholder="Your full name *" required>
+                                            </div>
+                                        
                                             <div class="form-group">
-												<input type="email" class="form-control" id="register-no" name="register-no" placeholder="Your register no *" required>
-											</div>
-											<!-- End .form-group -->
-                                            
-											<div class="form-group">
-												<input type="email" class="form-control" id="register-email" name="register-email" placeholder="Your email address *" required>
-											</div>
-											<!-- End .form-group -->
-
-											<div class="form-group">
-												<input type="password" class="form-control" id="register-password" name="register-password" placeholder="Password *" required>
-											</div>
-											<!-- End .form-group -->
-
-											<div class="form-footer">
-												<button type="submit" class="btn btn-outline-primary-2">
-													<span>SIGN UP</span>
-													<i class="icon-long-arrow-right"></i>
-												</button>
-
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" id="register-policy" required>
-													<label class="custom-control-label" for="register-policy">I agree to the
-														<a href="#">privacy policy</a>
-														*</label>
-												</div>
-												<!-- End .custom-checkbox -->
-											</div>
-											<!-- End .form-footer -->
-										</form>
+                                                <input type="text" class="form-control" id="register-no" name="register-no" placeholder="Your register no *" required>
+                                            </div>
+                                        
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="register-email" name="register-email" placeholder="Your email address *" required>
+                                            </div>
+                                        
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" id="register-password" name="register-password" placeholder="Password *" required>
+                                            </div>
+                                        
+                                            <div class="form-footer">
+                                                <button type="submit" class="btn btn-outline-primary-2">
+                                                    <span>SIGN UP</span>
+                                                    <i class="icon-long-arrow-right"></i>
+                                                </button>
+                                            </div>
+                                        </form>
 										
 										<!-- End .form-choice -->
 									</div>
@@ -1496,6 +747,8 @@
 		<!-- Main JS File -->
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/demos/demo-7.js"></script>
+		<script src="global.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	</body>
 
 
