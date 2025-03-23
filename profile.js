@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         if (response.ok) {
             const userData = await response.json();
             document.getElementById("profileName").textContent = userData.full_name;
-            document.getElementById("profileRegNo").textContent = `Reg No: ${userData.username}`;
+            document.getElementById("profileRegNo").textContent = `Admission No: ${userData.username}`;
             document.getElementById("profileEmail").textContent = userData.email;
         } else {
             window.location.href = "index.html"; // Redirect to login if unauthorized
