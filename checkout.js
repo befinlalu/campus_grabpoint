@@ -88,7 +88,7 @@ document.getElementById("check-out-form").addEventListener("submit", async funct
 
     let firstName = inputs[0].value; // First Name
     let lastName = inputs[1].value;  // Last Name
-    let registrationNo = inputs[2].value; // Register No
+    let registrationNo = inputs[2].value; // Admission No
     let phoneNumber = inputs[3].value; // Phone Number
     let email = inputs[4].value; // Email
     let note = document.querySelector("textarea").value; // Order Notes

@@ -69,7 +69,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
 
     // Collect input values
     const formData = {
-        username: document.getElementById("singin-email").value,  // Assuming Register No is the username
+        username: document.getElementById("singin-email").value,  // Assuming Admission No is the username
         password: document.getElementById("singin-password").value
     };
 
@@ -104,7 +104,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
                 window.location.href = "index.html"; // Redirect after success
             });
         } else {
-            let errorMessage = data.detail ? data.detail : data.message || "Invalid Register No or Password!";
+            let errorMessage = data.detail ? data.detail : data.message || "Invalid Admission No or Password!";
             Swal.fire({
                 icon: "error",
                 title: "Login Failed",
