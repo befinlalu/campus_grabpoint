@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let paperMultiplier = 1;
 
         // ✅ Set binding cost
-        let bindingCost = bindingOption.value === "spiral" ? 30 : 10;
+        let bindingCost = bindingOption.value === "spiral" ? 30 :"none" ? 0: 10;
 
         // ✅ Set urgency multiplier
         let urgencyMultiplier = urgency.value === "express" ? 1.2 : 1;
