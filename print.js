@@ -114,8 +114,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 const bindingOption = document.getElementById("bindingOption").value;
                 const urgency = document.getElementById("urgency").value;
                 const additionalNotes = document.querySelector("textarea").value;
+                const transactionInput = document.getElementById('transactionId').value;
                 const totalPrice = document.getElementById("totalPrice").textContent.replace("Rs ", "").trim();
-                const paymentStatus = "cod"; // Hardcoded as per your data
+                let paymentStatus = "cod"; // Hardcoded as per your data
+                let codSelected = document.querySelector('#collapse-3').classList.contains("show");
+                let upiSelected = document.querySelector('#collapse-2').classList.contains("show");
+
+                if (!codSelected && !upiSelected) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Payment Error",
+                        text: "Please select a payment method before submitting.",
+                    });
+                    return;
+                }
+            
+                if (upiSelected) {
+                    paymentStatus = "upi"; // Set payment status
+                    if (transactionInput === "") {
+                        transactionIdError.classList.remove("d-none"); // Show error below input field
+                        Swal.fire({
+                            icon: "error",
+                            title: "Transaction ID Required",
+                            text: "Please enter a Transaction ID for UPI payment.",
+                        });
+                        return;
+                    }
+                } else if (codSelected) {
+                    paymentStatus = "cod";
+                }
             
                 // Create FormData
                 const formData = new FormData();
@@ -134,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 formData.append("additional_notes", additionalNotes);
                 formData.append("total_price", totalPrice);
                 formData.append("payment_status", paymentStatus);
+                formData.append("transaction_id", transactionInput);
             
                 try {
                     // Get auth token from local storage
@@ -183,4 +211,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                 }
             });
-            
+            // Function to toggle transaction ID requirement based on payment method
+function toggleTransactionId(requireTransactionId) {
+    let transactionInput = document.getElementById("transactionId");
+    if (requireTransactionId) {
+        transactionInput.setAttribute("required", "true");
+    } else {
+        transactionInput.removeAttribute("required");
+    }
+}

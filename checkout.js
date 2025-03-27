@@ -81,20 +81,59 @@ function updateCartTable(cartItems, totalCartPrice) {
 
 
 document.getElementById("check-out-form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent page reload
-    const token = localStorage.getItem("token");
-    // Get input values
-    let inputs = document.querySelectorAll(".form-control");
+    event.preventDefault(); // Prevent form submission
 
-    let firstName = inputs[0].value; // First Name
-    let lastName = inputs[1].value;  // Last Name
-    let registrationNo = inputs[2].value; // Admission No
-    let phoneNumber = inputs[3].value; // Phone Number
-    let email = inputs[4].value; // Email
-    let note = document.querySelector("textarea").value; // Order Notes
-    // Construct order payload (updated format)
+    let codSelected = document.querySelector('#collapse-3').classList.contains("show");
+    let upiSelected = document.querySelector('#collapse-2').classList.contains("show");
+    let transactionId = document.getElementById("transactionId").value.trim();
+    let paymentError = document.getElementById("paymentError");
+    let transactionIdError = document.getElementById("transactionIdError");
+    let payment_status = ""; // Variable to store payment status
+
+    // Reset error messages
+    paymentError.classList.add("d-none");
+    transactionIdError.classList.add("d-none");
+
+    if (!codSelected && !upiSelected) {
+        Swal.fire({
+            icon: "error",
+            title: "Payment Error",
+            text: "Please select a payment method before submitting.",
+        });
+        return;
+    }
+
+    if (upiSelected) {
+        payment_status = "upi"; // Set payment status
+        if (transactionId === "") {
+            transactionIdError.classList.remove("d-none"); // Show error below input field
+            Swal.fire({
+                icon: "error",
+                title: "Transaction ID Required",
+                text: "Please enter a Transaction ID for UPI payment.",
+            });
+            return;
+        }
+    } else if (codSelected) {
+        payment_status = "cod"; // Set payment status
+    }
+
+    console.log("Payment Status:", payment_status);
+    console.log("Transaction ID:", transactionId || "N/A");
+
+    // Ensure order details are defined
+    let firstName = document.getElementById("firstName")?.value.trim() || "";
+    let lastName = document.getElementById("lastName")?.value.trim() || "";
+    let registrationNo = document.getElementById("registrationNo")?.value.trim() || "";
+    let phoneNumber = document.getElementById("phoneNumber")?.value.trim() || "";
+    let email = document.getElementById("email")?.value.trim() || "";
+    let note = document.getElementById("note")?.value.trim() || "";
+
+    let token = localStorage.getItem("token"); // Ensure token is retrieved
+
     let orderData = {
-        payment_status: "cod", // Change based on selected payment method
+        payment_status: payment_status, // Change based on selected payment method
+        transaction_id: transactionId, // Include transaction ID if UPI is selected
         order_address: {
             first_name: firstName,
             last_name: lastName,
@@ -156,46 +195,12 @@ document.getElementById("check-out-form").addEventListener("submit", async funct
 });
 
 
-function toggleTransactionId(isRequired) {
-    const transactionIdInput = document.getElementById("transactionId");
-    const errorText = document.getElementById("transactionIdError");
-
-    if (isRequired) {
-        transactionIdInput.setAttribute("required", "true");
+// Function to toggle transaction ID requirement based on payment method
+function toggleTransactionId(requireTransactionId) {
+    let transactionInput = document.getElementById("transactionId");
+    if (requireTransactionId) {
+        transactionInput.setAttribute("required", "true");
     } else {
-        transactionIdInput.removeAttribute("required");
-        errorText.classList.add("d-none"); // Hide error message
+        transactionInput.removeAttribute("required");
     }
 }
-
-document.getElementById("paymentForm").addEventListener("submit", function (e) {
-    const upiSection = document.getElementById("collapse-2");
-    const codSection = document.getElementById("collapse-3");
-    const transactionIdInput = document.getElementById("transactionId");
-    const paymentError = document.getElementById("paymentError");
-
-    // Check if any payment method is selected
-    if (!upiSection.classList.contains("show") && !codSection.classList.contains("show")) {
-        e.preventDefault(); // Prevent form submission
-        paymentError.classList.remove("d-none"); // Show error message
-    } else {
-        paymentError.classList.add("d-none"); // Hide error message
-    }
-
-    // Validate Transaction ID if UPI is selected
-    if (upiSection.classList.contains("show") && !transactionIdInput.value.trim()) {
-        e.preventDefault();
-        document.getElementById("transactionIdError").classList.remove("d-none");
-    }
-});
-
-document
-  .getElementById("show-password")
-  .addEventListener("change", function () {
-    var passwordField = document.getElementById("singin-password");
-    passwordField.type = this.checked ? "text" : "password";
-  });
-  document.getElementById("show-register-password").addEventListener("change", function() {
-    var passwordField = document.getElementById("register-password");
-    passwordField.type = this.checked ? "text" : "password";
-});
