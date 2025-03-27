@@ -317,3 +317,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Call function to fetch print order history
     fetchPrintOrderHistory();
 });
+
+document
+  .getElementById("show-password")
+  .addEventListener("change", function () {
+    var passwordField = document.getElementById("singin-password");
+    passwordField.type = this.checked ? "text" : "password";
+  });
+  document.getElementById("show-register-password").addEventListener("change", function() {
+    var passwordField = document.getElementById("register-password");
+    passwordField.type = this.checked ? "text" : "password";
+});

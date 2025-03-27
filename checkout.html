@@ -196,27 +196,51 @@
 												</tbody>
 											</table><!-- End .table table-summary -->
 	
-											<div class="accordion-summary" id="accordion-payment">
+											<div class="accordion-summary mt-2" id="accordion-payment">
 												
 	
 												
 	
-												<div class="card">
-													<div class="card-header" id="heading-3">
-														<h2 class="card-title">
-															<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-																Cash on delivery
-															</a>
-														</h2>
-													</div><!-- End .card-header -->
-													<div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-payment">
-														<div class="card-body">Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
-														</div><!-- End .card-body -->
-													</div><!-- End .collapse -->
-												</div><!-- End .card -->
-	
+											
+													<div class="card">
+														<div class="card-header" id="heading-1">
+															<h2 class="card-title">
+																<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3" onclick="toggleTransactionId(false)">
+																	Cash on Delivery
+																</a>
+															</h2>
+														</div><!-- End .card-header -->
+														<div id="collapse-3" class="collapse" aria-labelledby="heading-1" data-parent="#accordion-payment">
+															<div class="card-body">
+																Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+															</div><!-- End .card-body -->
+														</div><!-- End .collapse -->
+													</div><!-- End .card -->
 												
-	
+													<div class="card">
+														<div class="card-header" id="heading-2">
+															<h2 class="card-title">
+																<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2" onclick="toggleTransactionId(true)">
+																	UPI
+																</a>
+															</h2>
+														</div><!-- End .card-header -->
+														<div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion-payment">
+															<div class="card-body text-center">
+																<!-- Image (Square) -->
+																<img src="your-image-url.jpg" alt="UPI QR Code" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;">
+																
+																<!-- Transaction ID Input -->
+																<div class="mt-3">
+																	<input type="text" class="form-control" id="transactionId" placeholder="Enter Transaction ID">
+																	<small id="transactionIdError" class="text-danger d-none">Transaction ID is required.</small>
+																</div>
+															</div><!-- End .card-body -->
+														</div><!-- End .collapse -->
+													</div><!-- End .card -->
+												
+													<!-- Error Message -->
+													<p id="paymentError" class="text-danger d-none">Please select a payment method before submitting.</p>
 												
 	
 											<button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
@@ -518,9 +542,15 @@
 											</div>
 											<!-- End .form-group -->
 
+											<div class="p-2"></div>
 											<div class="form-group">
 												<label for="singin-password">Password *</label>
 												<input type="password" class="form-control" id="singin-password" name="singin-password" required>
+												<div class="form-check d-flex flex-row align-items-center">
+													<input type="checkbox" class="form-check-input" id="show-password">
+													<div class="p-1"></div>
+													<label class="form-check-label" for="show-password">Show Password</label>
+												</div>
 											</div>
 
 											<!-- End .form-group -->
@@ -557,8 +587,14 @@
                                             </div>
                                         
                                             <div class="form-group">
-                                                <input type="password" class="form-control" id="register-password" name="register-password" placeholder="Password *" required>
-                                            </div>
+												<input type="password" class="form-control" id="register-password" name="register-password" placeholder="Password *" required>
+												<div class="p-2"></div>
+												<div class="form-check d-flex flex-row align-items-center">
+													<input type="checkbox" class="form-check-input" id="show-register-password">
+													<div class="p-1"></div>
+													<label class="form-check-label" for="show-register-password">Show Password</label>
+												</div>
+											</div>
                                         
                                             <div class="form-footer">
                                                 <button type="submit" class="btn btn-outline-primary-2">

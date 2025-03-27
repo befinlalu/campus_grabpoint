@@ -154,3 +154,48 @@ document.getElementById("check-out-form").addEventListener("submit", async funct
         });
     }
 });
+
+
+function toggleTransactionId(isRequired) {
+    const transactionIdInput = document.getElementById("transactionId");
+    const errorText = document.getElementById("transactionIdError");
+
+    if (isRequired) {
+        transactionIdInput.setAttribute("required", "true");
+    } else {
+        transactionIdInput.removeAttribute("required");
+        errorText.classList.add("d-none"); // Hide error message
+    }
+}
+
+document.getElementById("paymentForm").addEventListener("submit", function (e) {
+    const upiSection = document.getElementById("collapse-2");
+    const codSection = document.getElementById("collapse-3");
+    const transactionIdInput = document.getElementById("transactionId");
+    const paymentError = document.getElementById("paymentError");
+
+    // Check if any payment method is selected
+    if (!upiSection.classList.contains("show") && !codSection.classList.contains("show")) {
+        e.preventDefault(); // Prevent form submission
+        paymentError.classList.remove("d-none"); // Show error message
+    } else {
+        paymentError.classList.add("d-none"); // Hide error message
+    }
+
+    // Validate Transaction ID if UPI is selected
+    if (upiSection.classList.contains("show") && !transactionIdInput.value.trim()) {
+        e.preventDefault();
+        document.getElementById("transactionIdError").classList.remove("d-none");
+    }
+});
+
+document
+  .getElementById("show-password")
+  .addEventListener("change", function () {
+    var passwordField = document.getElementById("singin-password");
+    passwordField.type = this.checked ? "text" : "password";
+  });
+  document.getElementById("show-register-password").addEventListener("change", function() {
+    var passwordField = document.getElementById("register-password");
+    passwordField.type = this.checked ? "text" : "password";
+});
