@@ -120,14 +120,14 @@ document.getElementById("check-out-form").addEventListener("submit", async funct
 
     console.log("Payment Status:", payment_status);
     console.log("Transaction ID:", transactionId || "N/A");
-
+    let inputs = document.querySelectorAll(".form-control");
     // Ensure order details are defined
-    let firstName = document.getElementById("firstName")?.value.trim() || "";
-    let lastName = document.getElementById("lastName")?.value.trim() || "";
-    let registrationNo = document.getElementById("registrationNo")?.value.trim() || "";
-    let phoneNumber = document.getElementById("phoneNumber")?.value.trim() || "";
-    let email = document.getElementById("email")?.value.trim() || "";
-    let note = document.getElementById("note")?.value.trim() || "";
+    let firstName = inputs[0].value; // First Name
+    let lastName = inputs[1].value;  // Last Name
+    let registrationNo = inputs[2].value; // Admission No
+    let phoneNumber = inputs[3].value; // Phone Number
+    let email = inputs[4].value; // Email
+    let note = document.querySelector("textarea").value;
 
     let token = localStorage.getItem("token"); // Ensure token is retrieved
 
