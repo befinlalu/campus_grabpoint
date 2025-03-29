@@ -2,67 +2,82 @@
 var api = "http://localhost:8000/api";
 
 // Registration Form Submission
-document.getElementById("registration-form").addEventListener("submit", async function (event) {
+document
+  .getElementById("registration-form")
+  .addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent default form submission
 
     // Collect form data
     const formData = {
-        full_name: document.getElementById("register-name").value,
-        username: document.getElementById("register-no").value,
-        email: document.getElementById("register-email").value,
-        password: document.getElementById("register-password").value
+      full_name: document.getElementById("register-name").value,
+      username: document.getElementById("register-no").value,
+      email: document.getElementById("register-email").value,
+      password: document.getElementById("register-password").value,
     };
 
     // Show loading alert
     Swal.fire({
-        title: "Registering...",
-        text: "Please wait while we create your account.",
-        allowOutsideClick: false,
-        didOpen: () => {
-            Swal.showLoading();
-        }
+      title: "Registering...",
+      text: "Please wait while we create your account.",
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
     });
 
     try {
-        const response = await fetch(`${api}/auth/register/`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-        });
+      const response = await fetch(`${api}/auth/register/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-        const data = await response.json();
+      const data = await response.json(); // Parse JSON response
 
-        if (response.ok) {
-            Swal.fire({
-                icon: "success",
-                title: "Registration Successful",
-                text: "Your account has been created successfully!",
-                confirmButtonText: "OK"
-            }).then(() => {
-                document.getElementById("register-name").value = "";
-                document.getElementById("register-no").value = "";
-                document.getElementById("register-email").value = "";
-                document.getElementById("register-password").value = "";
-            });
-        } else {
-            Swal.fire({
-                icon: "error",
-                title: "Registration Failed",
-                text: data.message || "Something went wrong!",
-                confirmButtonText: "Try Again"
-            });
-        }
-    } catch (error) {
-        console.error("Error:", error);
+      if (response.ok) {
+        // Successful registration
         Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Something went wrong. Please try again later.",
-            confirmButtonText: "OK"
+          icon: "success",
+          title: "Registration Successful",
+          text: "Your account has been created successfully!",
+          confirmButtonText: "OK",
+        }).then(() => {
+          document.getElementById("register-name").value = "";
+          document.getElementById("register-no").value = "";
+          document.getElementById("register-email").value = "";
+          document.getElementById("register-password").value = "";
         });
-    }
-});
+      } else if (response.status === 400) {
+        // Handle validation errors
+        const emailError = data.email ? data.email.join(" ") : null;
+        const usernameError = data.username ? data.username.join(" ") : null;
+        const errorMessage =usernameError || emailError || "Error trying to register";
 
+        Swal.fire({
+          icon: "error",
+          title: "Registration Failed",
+          text: errorMessage,
+          confirmButtonText: "Try Again",
+        });
+      } else {
+        // Handle other errors
+        Swal.fire({
+          icon: "error",
+          title: "Registration Failed",
+          text: "Something went wrong. Please try again later.",
+          confirmButtonText: "OK",
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Something went wrong. Please try again later.",
+        confirmButtonText: "OK",
+      });
+    }
+  });
 // Login Form Submission
 document.getElementById("login-form").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent form from refreshing

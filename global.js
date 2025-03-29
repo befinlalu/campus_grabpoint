@@ -32,9 +32,10 @@ document
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      const data = await response.json(); // Parse JSON response
 
       if (response.ok) {
+        // Successful registration
         Swal.fire({
           icon: "success",
           title: "Registration Successful",
@@ -46,12 +47,25 @@ document
           document.getElementById("register-email").value = "";
           document.getElementById("register-password").value = "";
         });
-      } else {
+      } else if (response.status === 400) {
+        // Handle validation errors
+        const emailError = data.email ? data.email.join(" ") : null;
+        const usernameError = data.username ? data.username.join(" ") : null;
+        const errorMessage =usernameError || emailError || "Error trying to register";
+
         Swal.fire({
           icon: "error",
           title: "Registration Failed",
-          text: data.message || "Something went wrong!",
+          text: errorMessage,
           confirmButtonText: "Try Again",
+        });
+      } else {
+        // Handle other errors
+        Swal.fire({
+          icon: "error",
+          title: "Registration Failed",
+          text: "Something went wrong. Please try again later.",
+          confirmButtonText: "OK",
         });
       }
     } catch (error) {
@@ -64,6 +78,7 @@ document
       });
     }
   });
+
 
 // Login Form Submission
 document
